@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -type d -empty -print -o -type f -empty -print
+find . -type d -empty -exec basename {} \; -o -type f -empty -exec basename {} \;
+
