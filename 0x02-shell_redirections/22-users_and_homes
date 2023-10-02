@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$(cut -d: -f1,6 /etc/passwd)"

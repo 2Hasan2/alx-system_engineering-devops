@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$(grep -i "^[[:alpha:]]" /etc/ssh/sshd_config)"
