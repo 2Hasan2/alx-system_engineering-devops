@@ -1,0 +1,2 @@
+#!/bin/bash
+grep bin /ets/passwd | wc -l
