@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "$(ls -t | head -n 10)"
