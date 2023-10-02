@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -type f -name "*.gif" -exec sh -c 'echo "${0%.*}"' {} \; | tr '\n' '\0' | xargs -0 -n1 echo; echo
+find . -type f -name "*.gif" -exec sh -c 'echo "${0%.*}"' {} \; | LC_ALL=C sort -f | tr '\n' '\0' | xargs -0 -n1 echo; echo
+
