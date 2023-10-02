@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(find . -type f -name "*.sh" -print | wc -l)"
+grep -A 3 'root' /etc/passwd
