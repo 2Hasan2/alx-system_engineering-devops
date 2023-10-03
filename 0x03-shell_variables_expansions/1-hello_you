@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 'hello $USER'
+printf "hello $USER\n"  #Alternatively, it can be done as follows: echo "hello $USER"
