@@ -2,5 +2,5 @@
 # This script will print "Holberton School" 10 times
 for i in {1..10}
 do
-	echo "Holberton School"
+	echo "Best School"
 done
