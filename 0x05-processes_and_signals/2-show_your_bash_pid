@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# 2
+
+ps -aux | grep bash
