@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# this script will print the names
+# of the files in the current directory
+
+for file in *; do
+	if [[ ! $file =~ ^\. ]]; then
+		name=$(echo "$file" | cut -d'-' -f2-)
+		echo "$name"
+	fi
+done
