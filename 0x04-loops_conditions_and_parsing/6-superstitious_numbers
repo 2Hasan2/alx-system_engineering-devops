@@ -1,5 +1,6 @@
 #!/usr/bin/bash
-# This script will print numbers from 1 to 20 and will print a message if the number is 4, 9 or 17
+# This script will print numbers from 1 to 20
+#and will print a message if the number is 4, 9 or 17
 
 count=1
 
