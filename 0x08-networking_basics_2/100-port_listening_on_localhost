@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Listens on port 5500 on localhost.
+
+nc -l localhost 5500
