@@ -1,0 +1,40 @@
+# Application Server vs Web Server
+
+## Introduction:
+
+This README provides an overview of the differences between an application server and a web server, as well as the design of a server infrastructure incorporating both components.
+
+## Application Server:
+
+An application server is a software framework that provides an environment for running server-side applications. It typically handles the execution of dynamic code, such as processing user requests, accessing databases, and generating dynamic content to be served to clients. Application servers support various programming languages and frameworks, allowing developers to build and deploy complex web applications.
+
+## Web Server:
+
+A web server is a software application or hardware device that serves static content to clients over the internet. It handles HTTP requests from web browsers and responds by sending HTML pages, images, CSS files, and other static resources. Web servers are responsible for hosting websites and serving content efficiently to users.
+
+## Infrastructure Design:
+
+1. <h2>Server</h2>: 
+   - Responsibilities: Acts as a physical or virtual machine hosting the server infrastructure components.
+   
+2. <h2>Load Balancer (HAproxy)</h2>:
+   - Responsibilities: Distributes incoming traffic across multiple servers to ensure high availability and scalability.
+   - Configuration: Configured as a cluster with the other load balancer to provide redundancy and fault tolerance.
+
+3. <h2>Web Server</h2>:
+   - Responsibilities: Serves static content, such as HTML pages, images, and CSS files, to clients.
+   - Separation: Hosted on its own server to ensure efficient resource utilization and scalability.
+   
+4. <h2>Application Server</h2>:
+   - Responsibilities: Executes server-side code, processes dynamic requests, and interacts with the database.
+   - Separation: Hosted on its own server to isolate application logic and improve maintainability and scalability.
+
+## Specifics Explanation:
+
+- <strong>Application Server Separation</strong>: By separating the application server from the web server, we can achieve better resource allocation and scalability. It allows us to scale each component independently based on their specific resource requirements and workload.
+
+- <strong>Load Balancer Cluster Configuration</strong>: Configuring HAproxy as a cluster with redundancy ensures high availability and fault tolerance. In case one load balancer fails, the other can seamlessly take over the traffic distribution, minimizing downtime and ensuring uninterrupted service.
+
+## Conclusion:
+
+Understanding the differences between application servers and web servers is crucial for designing efficient and scalable server infrastructures. By properly separating and configuring components, we can build resilient and high-performance systems capable of handling varying workloads and traffic demands.
