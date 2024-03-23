@@ -1,0 +1,41 @@
+# Secured and Monitored Three-Server Web Infrastructure for www.foobar.com
+![2-secured_and_monitored_web_infrastructure](2-secured_and_monitored_web_infrastructure.png)
+
+
+## Infrastructure Design:
+1. **Server 1 (Web Server - Nginx)**:
+   - Responsibilities: Handles HTTP requests, serves static content, and acts as a reverse proxy.
+   - Secured with a firewall to control incoming and outgoing traffic.
+   - SSL certificate installed to serve traffic over HTTPS, ensuring encryption and data integrity.
+
+2. **Server 2 (Application Server)**:
+   - Responsibilities: Executes server-side code, processes dynamic requests, and interacts with the database.
+   - Secured with a firewall to control access to sensitive data and services.
+   
+3. **Load Balancer (HAproxy)**:
+   - Responsibilities: Distributes incoming traffic across servers using round-robin algorithm.
+   - Terminates SSL connections to handle encrypted traffic efficiently.
+   - Secured with a firewall to protect against unauthorized access and attacks.
+   
+## Specifics Explanation:
+- **Firewalls**: Added to enforce security policies and control access to servers, preventing unauthorized access and potential attacks.
+- **HTTPS Traffic**: Served over HTTPS to encrypt data transmission, ensuring confidentiality and integrity of sensitive information.
+- **Monitoring**: Used to monitor the health, performance, and security of the infrastructure in real-time.
+- **Monitoring Tool**: Collects data from monitoring clients installed on servers, aggregating and analyzing it to provide insights and alerts.
+
+## Issues with the Infrastructure:
+1. **Terminating SSL at Load Balancer Level**:
+   - May expose decrypted traffic within the internal network, increasing the risk of data interception.
+2. **Single MySQL Server for Writes**:
+   - Creates a single point of failure, leading to downtime and data loss if the server fails.
+3. **Uniform Components Across Servers**:
+   - Increases the vulnerability to common exploits and attacks, as compromising one server could potentially affect others.
+
+## Monitoring QPS for Web Server:
+To monitor the QPS (Queries Per Second) for the web server:
+1. Install a monitoring client on the web server.
+2. Configure the monitoring tool to collect and analyze request metrics.
+3. Set up alerts based on predefined thresholds to detect abnormal spikes or drops in QPS.
+
+## Conclusion:
+The infrastructure is designed to provide security, encryption, and monitoring capabilities. However, issues such as SSL termination at the load balancer level and single points of failure need to be addressed to improve reliability and resilience.

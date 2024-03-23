@@ -1,5 +1,5 @@
 # One-Server Web Infrastructure
-![0-simple_web_stack](0-simple_web_stack.jpg)
+![0-simple_web_stack](0-simple_web_stack.png)
 
 ## Introduction:
 This README provides an overview of the one-server web infrastructure designed to host the website reachable via www.foobar.com.

@@ -1,0 +1,33 @@
+# Three-Server Web Infrastructure for www.foobar.com
+![1-distributed_web_infrastructure](1-distributed_web_infrastructure.png)
+
+## Infrastructure Design:
+1. **Server 1 (Web Server - Nginx)**:
+   - Responsibilities: Handles HTTP requests, serves static content, and acts as a reverse proxy.
+   
+2. **Server 2 (Application Server)**:
+   - Responsibilities: Executes server-side code, processes dynamic requests, and interacts with the database.
+   
+3. **Load Balancer (HAproxy)**:
+   - Responsibilities: Distributes incoming traffic across servers using round-robin algorithm.
+   - Setup: Active-Active to maximize resource utilization and load distribution.
+
+## Specifics Explanation:
+- **Why Load Balancer**: Added to distribute traffic evenly across servers, preventing any single server from becoming overwhelmed and ensuring high availability.
+- **Distribution Algorithm**: Round-robin is chosen for its simplicity and fair distribution of requests.
+- **Active-Active Setup**: Both servers are actively serving requests, providing redundancy and scalability by distributing the load evenly across servers.
+- **Primary-Replica Database Cluster**: Implemented for data redundancy and availability.
+
+## Issues with the Infrastructure:
+1. **Single Points of Failure (SPOF)**:
+   - The single load balancer is a potential SPOF, leading to downtime if it fails.
+   - Lack of firewall introduces security risks.
+   - Absence of HTTPS encryption exposes sensitive data to potential interception and compromise.
+2. **Security Issues**:
+   - No firewall protection exposes servers to unauthorized access and potential attacks.
+   - Lack of HTTPS encryption leaves data vulnerable to interception and tampering.
+3. **No Monitoring**:
+   - Without monitoring tools, it's challenging to detect and troubleshoot performance issues or failures promptly.
+
+## Conclusion:
+While the infrastructure provides redundancy and scalability, it still has weaknesses. Implementing redundancy, enhancing security, and deploying monitoring tools are essential steps to improve reliability, security, and performance.
