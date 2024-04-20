@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-
 # ssh into the school server
 ssh -i ~/.ssh/school ubuntu@100.25.15.28
