@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # install load balancer
-#install load balancer
 
 
 echo -e "Updating and doing some minor checks...\n"
@@ -35,11 +34,11 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend hasanragab-tech-frontend
+frontend kiroclick-tech-frontend
     bind *:80
-    default_backend hasanragab-tech-backend
+    default_backend kiroclick-tech-backend
 
-backend hasanragab-tech-backend
+backend kiroclick-tech-backend
     balance roundrobin
     server 531123-web-01 18.215.160.80:80 check
     server 531123-web-02 34.229.189.74:80 check
