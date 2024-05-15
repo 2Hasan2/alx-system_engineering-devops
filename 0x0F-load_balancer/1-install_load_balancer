@@ -41,8 +41,8 @@ frontend hasanragab-frontend
 
 backend hasanragab-backend
     balance roundrobin
-    server 531209-web-01 54.226.25.83:80 check
-    server 531209-web-02 100.24.238.203:80 check
+    server 531123-web-01 18.215.160.80:80 check
+    server 531123-web-02 34.229.189.74:80 check
 "
 
 echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
