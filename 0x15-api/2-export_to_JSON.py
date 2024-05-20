@@ -12,7 +12,6 @@ if __name__ == "__main__":
     username = user.get("username")
     todo = requests.get(url + "todos", params={"userId": id}).json()
 
-
     data = {
         id: [
                 {
