@@ -11,7 +11,6 @@ if __name__ == "__main__":
     user = requests.get(url + f"users/{id}").json()
     todo = requests.get(url + "todos", params={"userId": id}).json()
 
-    name = user.get("name")
     username = user.get("username")
 
     with open(f"{id}.csv", "w", newline="") as csvFile:
