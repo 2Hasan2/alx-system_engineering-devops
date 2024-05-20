@@ -11,11 +11,13 @@ if __name__ == "__main__":
     user = requests.get(url + f"users/{id}").json()
     todo = requests.get(url + "todos", params={"userId": id}).json()
 
-    done = [task.get("title") for task in todo if task.get("completed")]
     name = user.get("name")
+    username = user.get("username")
 
-    with open(f"{id}.csv", "w") as csvFile:
+    with open(f"{id}.csv", "w", newline="") as csvFile:
         writer = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
         [
-            writer.writerow([sys.argv[1], name, task]) for task in todo
+            writer.writerow([id, username, task.get("completed"),
+                            task.get("title")])
+            for task in todo
         ]
