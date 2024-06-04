@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" 0. How many subs? """
+"""
+0-subs
+this module contains the function number_of_subscribers(subreddit)
+"""
 import requests
 
 
