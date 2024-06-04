@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-0-subs
-this module contains the function number_of_subscribers(subreddit)
+Contains the number_of_subscribers function
 """
+
 import requests
 
 
